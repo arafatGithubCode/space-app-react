@@ -1,44 +1,21 @@
-import React from "react";
-import Navbar from "./components/Navbar/Navbar";
-import Hero from "./components/Hero/Hero.jsx";
-import HeroCard from "./components/HeroCard/HeroCard.jsx";
-import BgVideo from "./assets/earth-bg.mp4";
-import wave from "./assets/wave Gif.gif";
-import Rapidscat from "./components/Rapidscat/Rapidscat.jsx";
-import Satelite from "./components/Satelite/Satelite.jsx";
-import Footer from "./components/Footer/Footer.jsx";
-import Footer5 from "./components/Footer/Footer5.jsx";
-import AOS from "aos";
-import "aos/dist/aos.css";
+import { BrowserRouter } from "react-router-dom";
+import bgVideo from "./assets/earth-bg.mp4";
+import Header from "./layouts/Header";
 
-const App = () => {
-  React.useEffect(() => {
-    AOS.init({
-      duration: 1200,
-      easing: "ease-in-out",
-    });
-  });
+export default function App() {
   return (
-    <div className="">
+    <BrowserRouter>
       <div className="h-[700px] relative">
         <video
           autoPlay
-          loop
           muted
-          className="fixed right-0 top-0 h-[700px] w-full object-cover z-[-1]"
+          loop
+          className="fixed top-0 left-0 object-cover w-full z-[-1] h-[700px]"
         >
-          <source src={BgVideo} type="video/mp4" />
+          <source src={bgVideo} type="video/mp4" />
         </video>
-        <Navbar />
-        <Hero />
       </div>
-      <HeroCard />
-      <Rapidscat />
-      <Satelite />
-      {/* <Footer /> */}
-      <Footer5 />
-    </div>
+      <Header />
+    </BrowserRouter>
   );
-};
-
-export default App;
+}
