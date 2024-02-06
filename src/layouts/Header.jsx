@@ -7,7 +7,10 @@ const Header = () => {
   const [showMenu, setShowMenu] = useState(false);
 
   return (
-    <header className="fixed top-0 left-0 w-full bg-black/10 border-b border-gray-500 backdrop:blur-sm">
+    <header
+      data-aos="fade-down"
+      className="fixed top-0 left-0 w-full bg-black/10 border-b border-gray-500 backdrop:blur-sm"
+    >
       <div className="container">
         <div className="flex items-center justify-between py-4 px-3">
           <div className="flex items-center gap-3">

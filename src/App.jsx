@@ -1,10 +1,19 @@
-import { BrowserRouter } from "react-router-dom";
 import bgVideo from "./assets/earth-bg.mp4";
 import Header from "./layouts/Header";
 
+import AOS from "aos";
+import "aos/dist/aos.css";
+import { useEffect } from "react";
+
 export default function App() {
+  useEffect(() => {
+    AOS.init({
+      duration: 1200,
+      easing: "ease-in-out",
+    });
+  });
   return (
-    <BrowserRouter>
+    <>
       <div className="h-[700px] relative">
         <video
           autoPlay
@@ -14,8 +23,8 @@ export default function App() {
         >
           <source src={bgVideo} type="video/mp4" />
         </video>
+        <Header />
       </div>
-      <Header />
-    </BrowserRouter>
+    </>
   );
 }
