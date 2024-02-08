@@ -2,7 +2,7 @@ import moonSurface from "../assets/moon-surface-hd.png";
 
 const Hero = () => {
   return (
-    <main className="min-h-screen flex flex-col justify-center bg-black/20 relative z-30">
+    <main className="min-h-screen flex flex-col justify-center bg-black/20 relative z-0">
       <div className="text-white container space-y-5">
         <h1 className="text-5xl font-bold" data-aos="fade-up">
           ORBITE THE <br /> EARTH

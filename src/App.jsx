@@ -5,6 +5,7 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import { useEffect } from "react";
 import Hero from "./components/Hero";
+import HeroCard from "./components/HeroCard";
 
 export default function App() {
   useEffect(() => {
@@ -27,6 +28,7 @@ export default function App() {
         <Header />
         <Hero />
       </div>
+      <HeroCard />
     </>
   );
 }

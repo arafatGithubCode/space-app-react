@@ -13,7 +13,7 @@ const Header = () => {
   return (
     <header
       data-aos="fade-down"
-      className="fixed top-0 left-0 w-full bg-black/10 border-b border-gray-500 backdrop:blur-sm z-50"
+      className="fixed top-0 left-0 w-full bg-black/20 border-b border-gray-500 backdrop-blur-md z-50"
     >
       <div className="container">
         <div className="flex items-center justify-between py-4 px-3">
@@ -63,12 +63,9 @@ const Header = () => {
             Login
           </button>
           <div className="md:hidden relative">
-            <div className="bg-white p-2 rounded-full cursor-pointer transition-all duration-500 ease-in-out">
+            <div className="bg-white p-2 rounded-full cursor-pointer">
               {showMenu ? (
-                <IoClose
-                  className="text-4xl text-black transition-all duration-500 ease-in-out"
-                  onClick={toggleMenu}
-                />
+                <IoClose className="text-4xl text-black" onClick={toggleMenu} />
               ) : (
                 <TiThMenu
                   onClick={toggleMenu}
@@ -78,11 +75,11 @@ const Header = () => {
             </div>
             {showMenu && (
               <nav
-                className="absolute bg-white/50 top-[4.4rem] right-[-1.7rem] min-h-screen"
+                className="absolute bg-white top-[4.4rem] right-[-1.7rem] min-h-screen"
                 data-aos="fade-left"
                 data-aos-duration="500"
               >
-                <ul className=" flex flex-col gap-4 p-5 text-xl font-semibold text-white">
+                <ul className=" flex flex-col gap-4 p-5 text-xl font-semibold text-black">
                   <li onClick={toggleMenu}>
                     <a
                       className="hover:underline underline-offset-8  decoration-gray-500"
