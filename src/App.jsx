@@ -7,6 +7,7 @@ import { useEffect } from "react";
 import Hero from "./components/Hero";
 import HeroCard from "./components/HeroCard";
 import RapidsCat from "./components/RapidsCat";
+import Footer from "./layouts/Footer";
 
 export default function App() {
   useEffect(() => {
@@ -31,6 +32,7 @@ export default function App() {
       </div>
       <HeroCard />
       <RapidsCat />
+      <Footer />
     </>
   );
 }

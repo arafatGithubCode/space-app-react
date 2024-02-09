@@ -1,14 +1,29 @@
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import logo from "../assets/logo.png";
 import { TiThMenu } from "react-icons/ti";
 import { IoClose } from "react-icons/io5";
 
 const Header = () => {
   const [showMenu, setShowMenu] = useState(false);
+  const menuRef = useRef(null);
 
   const toggleMenu = () => {
     setShowMenu(!showMenu);
   };
+
+  useEffect(() => {
+    const closeOpenMenu = (e) => {
+      if (showMenu && !menuRef.current.contains(e.target)) {
+        setShowMenu(false);
+      }
+    };
+
+    document.addEventListener("mousedown", closeOpenMenu);
+
+    return () => {
+      document.removeEventListener("mousedown", closeOpenMenu);
+    };
+  }, [showMenu]);
 
   return (
     <header
@@ -62,7 +77,7 @@ const Header = () => {
           <button className="text-white px-3 py-1 rounded-lg border-2 font-semibold">
             Login
           </button>
-          <div className="md:hidden relative">
+          <div className="md:hidden">
             <div className="bg-white p-2 rounded-full cursor-pointer">
               {showMenu ? (
                 <IoClose className="text-4xl text-black" onClick={toggleMenu} />
@@ -75,9 +90,10 @@ const Header = () => {
             </div>
             {showMenu && (
               <nav
-                className="absolute bg-white top-[4.4rem] right-[-1.7rem] min-h-screen"
+                className="absolute bg-white top-[5.3rem] right-0 min-h-screen"
                 data-aos="fade-left"
                 data-aos-duration="500"
+                ref={menuRef}
               >
                 <ul className=" flex flex-col gap-4 p-5 text-xl font-semibold text-black">
                   <li onClick={toggleMenu}>
